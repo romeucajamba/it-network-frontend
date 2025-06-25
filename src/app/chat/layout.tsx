@@ -10,7 +10,7 @@ export default function RootLayout({
     <>
         <SidebarProvider>
           <AppSidebar  />
-          <main className={`h-screen bg-[#001329]`}>
+          <main className={`h-screen bg-[#001329] `}>
             {children}
           </main>
         </SidebarProvider>

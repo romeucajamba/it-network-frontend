@@ -8,12 +8,12 @@ export default function RootLayout({
 }>) {
   return (
     <>
-        <SidebarProvider>
-          <AppSidebar  />
-          <main className={`h-screen bg-[#001329]`}>
-            {children}
-          </main>
-        </SidebarProvider>
+      <SidebarProvider className="bg-red-500">
+        <AppSidebar  />
+        <main className={`h-screen`}> 
+          {children}
+        </main>
+      </SidebarProvider>
     </>
   );
 }

@@ -1,8 +1,7 @@
 "use client"
 import Image from "next/image";
 import { Search } from "lucide-react";
-import { SuggestionsSection } from "./sugestionsSection";
-import {CoursesSection} from "./courseSection";
+import { Feed } from "./feed"
 import UserLogo from "@/assets/user.svg";
 import Link from "next/link";
 
@@ -45,8 +44,7 @@ export const MainContent = () => {
 
       {/* Content Sections */}
       <div className="space-y-8">
-        <CoursesSection />
-        <SuggestionsSection />
+        <Feed/>
       </div>
     </div>
   );

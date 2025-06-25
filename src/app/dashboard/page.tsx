@@ -1,5 +1,5 @@
 import {MainContent} from "./_components/mainContent";
-import {VirtualAssistant} from "./_components/virtualAssistent";
+import { VirtualAssistant } from "@/components/virtualAssistent";
 
 const Dashboard = () => {
   return (

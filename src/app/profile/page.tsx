@@ -1,13 +1,13 @@
 "use client"
 
-import {Profile} from "./_components/profile";
+import {Personal} from "./_components/persnoal";
 
-const ProfilePage = () => {
+const Profile = () => {
   return (
     <div className="min-h-screen bg-slate-900 flex">
-        <Profile />
+        <Personal />
     </div>
   );
 };
 
-export default ProfilePage;
+export default Profile;
