@@ -10,6 +10,7 @@ interface ProfileData {
   name: string;
   headline: string;
   location: string;
+  connections: number; // ← adicionado aqui
   about: string;
   experience: Array<{
     id: number;
