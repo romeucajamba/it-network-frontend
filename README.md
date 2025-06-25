@@ -152,10 +152,11 @@ src/
 ├── features/         # Módulos separados por funcionalidades (auth, profile, chat, agenda, etc.)
 ├── hooks/            # Hooks personalizados
 ├── lib/              # Instância Axios, i18n config, utils gerais
-├── app/            # Páginas da aplicação (rotas Next.js)
+├── app/              # Páginas da aplicação (rotas Next.js)
 ├── stores/           # Zustand stores
 ├── types/            # Tipagens globais e interfaces
 └── services/         # Camada de comunicação com a API
+└── lib/              # Pasta onde contem icones e rotas da aplicação
 ```
 
 ## 🌐 Integração com API
