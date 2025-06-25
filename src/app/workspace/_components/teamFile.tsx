@@ -22,8 +22,8 @@ interface ProjectFile {
   category: 'design' | 'code' | 'documentation' | 'assets' | 'other';
 }
 
-export const TeamFiles: React.FC<TeamFilesProps> = ({ project }) => {
-  const [files, setFiles] = useState<ProjectFile[]>([
+export const TeamFiles: React.FC<TeamFilesProps> = () => {
+  const [files, ] = useState<ProjectFile[]>([
     {
       id: '1',
       name: 'API_Documentation.pdf',
