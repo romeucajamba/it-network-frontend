@@ -144,7 +144,7 @@ Romeu, segue abaixo a lista das funcionalidades que você mencionou organizadas 
 
 ---
 
-## 🧱 Estrutura de Pastas (sugestão)
+## 🧱 Estrutura de Pastas
 
 ```
 src/
