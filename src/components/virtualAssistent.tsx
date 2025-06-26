@@ -44,7 +44,7 @@ export const VirtualAssistant = () => {
   };
 
   return (
-    <div className="w-80 bg-slate-800 border-l border-slate-700 flex flex-col">
+    <div className=" w-[] bg-slate-800 border-l border-slate-700 flex flex-col">
       <div className="p-4 border-b border-slate-700">
         <div className="flex items-center space-x-3">
           <Avatar className="w-12 h-12">

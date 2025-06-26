@@ -1,4 +1,3 @@
-import { SidebarProvider } from "@/components/ui/sidebar";
 import { Header } from "@/components/header";
 
 export default function RootLayout({
@@ -8,12 +7,11 @@ export default function RootLayout({
 }>) {
   return (
     <>
-        <SidebarProvider>
-          <main className={`h-screen bg-[#001329] flex flex-col space-y-8`}>
-            <Header/>
-            {children}
-          </main>
-        </SidebarProvider>
+        <Header/>
+      <main className={`bg-[#001329] w-screen`}>      
+        {children}
+      </main>
+        
     </>
   );
 }

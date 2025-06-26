@@ -1,4 +1,4 @@
-import { Settings, LuCalendarRange, GrHomeOption, CiUser, FaLaptopCode, BsChat, HiOutlineAcademicCap, IoIosNotificationsOutline } from "@/lib/icons";
+import { Settings, LuCalendarRange, GrHomeOption, CiUser, FaLaptopCode, BsChat, HiOutlineAcademicCap } from "@/lib/icons";
 
 export const routes = [
   { id: "home", icon: GrHomeOption, title: "Home", url:"/dashboard" },
@@ -7,6 +7,5 @@ export const routes = [
   { id: "conversas", icon: BsChat, title: "Conversas", hasNotification: true, url:"/chat" },
   { id: "carreira", icon: HiOutlineAcademicCap, title: "Carreira", url:"/carrer" },
   { id: "perfil", icon: CiUser, title: "Perfil", url:"/profile" },
-  {id: 'notificacoes', icon:IoIosNotificationsOutline, title: 'Notificações', url: "/notifications"},
   { id: "definicoes", icon: Settings, title: "Definições", url:"/settings" },
 ];
