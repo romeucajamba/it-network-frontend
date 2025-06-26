@@ -4,7 +4,7 @@ import {Personal} from "./_components/persnoal";
 
 const Profile = () => {
   return (
-    <div className="min-h-screen bg-slate-900 flex">
+    <div className="bg-slate-900">
         <Personal />
     </div>
   );

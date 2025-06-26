@@ -13,17 +13,6 @@ import { NotificationsHover } from "./notificationHover";
 
 export function Header ()  {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  // Detectar scroll para adicionar efeitos
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   // Fechar menu mobile quando clicar em um link
   const handleMobileMenuClick = () => {
@@ -47,9 +36,7 @@ export function Header ()  {
     <>
       <header 
         className={`
-          flex items-center p-4 lg:p-6 shadow-sm bg-transparent backdrop-brightness-50 
-          fixed z-50 w-full transition-all duration-300
-          ${isScrolled ? 'backdrop-blur-md bg-[#1B191F]' : ''}
+          w-full flex items-center p-4 lg:p-6 bg-[#1B191F] w-full transition-all duration-300
         `}
       >
         {/* Logo */}
@@ -186,64 +173,6 @@ export function Header ()  {
           <div className="absolute bottom-20 right-12 w-1 h-1 bg-[#FF5777]/60 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
         </div>
       </div>
-
-      {/* Custom CSS for animations */}
-      <style jsx>{`
-        @keyframes slide-in-left {
-          from {
-            opacity: 0;
-            transform: translateX(-30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-
-        @keyframes slide-in-up {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .animate-slide-in-left {
-          animation: slide-in-left 0.6s ease-out forwards;
-          opacity: 0;
-        }
-
-        .animate-slide-in-up {
-          animation: slide-in-up 0.6s ease-out forwards;
-          opacity: 0;
-        }
-
-        /* Smooth scrolling */
-        html {
-          scroll-behavior: smooth;
-        }
-
-        /* Custom scrollbar for webkit browsers */
-        ::-webkit-scrollbar {
-          width: 6px;
-        }
-
-        ::-webkit-scrollbar-track {
-          background: #1B191F;
-        }
-
-        ::-webkit-scrollbar-thumb {
-          background: #FF5777;
-          border-radius: 3px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-          background: #FF5777;
-        }
-      `}</style>
     </>
   );
 };

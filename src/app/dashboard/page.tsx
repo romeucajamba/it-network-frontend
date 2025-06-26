@@ -3,11 +3,9 @@ import { VirtualAssistant } from "@/components/virtualAssistent";
 
 const Dashboard = () => {
   return (
-    <div className="min-h-screen bg-slate-900 flex">
-      <div className="flex-1 flex">
+    <div className="bg-slate-900 flex-1 flex">
         <MainContent />
         <VirtualAssistant />
-      </div>
     </div>
   );
 };

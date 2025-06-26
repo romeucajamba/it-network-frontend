@@ -208,7 +208,7 @@ export const Personal = () => {
         isOpen={isEditModalOpen}
         onClose={() => setIsEditModalOpen(false)}
         profileData={profileData}
-        onSave={setProfileData}
+        onSave={(data) => setProfileData(data)} 
       />
     </div>
   );

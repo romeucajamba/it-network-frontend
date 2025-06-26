@@ -136,7 +136,7 @@ export const Workspace = () => {
 
   return (
     <div className="min-h-screen bg-slate-900 text-white">
-      <div className="container mx-auto p-6">
+      <div className="container p-6">
         <div className="flex items-center justify-between mb-8">
           <div>
             <h1 className="text-3xl font-bold mb-2">Área de Trabalho</h1>

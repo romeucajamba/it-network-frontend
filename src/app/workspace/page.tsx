@@ -3,7 +3,7 @@ import { Workspace } from "./_components/workSpace";
 
 export default function WorkSpace(){
     return(
-        <main className="">
+        <main>
             <Workspace/>
         </main>
     )
