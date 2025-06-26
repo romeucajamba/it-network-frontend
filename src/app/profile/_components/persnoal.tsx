@@ -5,47 +5,11 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {EditProfileModal} from './modalEditProfile';
+import { useProfileStore } from '@/hooks/useProfileStore';
 
 export const Personal = () => {
+  const { profileData, setProfileData } = useProfileStore();
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
-  const [profileData, setProfileData] = useState({
-    name: 'Romeu Cajamba',
-    headline: 'Engenheiro de Software Full Stack | React, Node.js, Python',
-    location: 'Luanda, Angola',
-    connections: 1209,
-    about: 'Desenvolvedor apaixonado por tecnologia com mais de 3 anos de experiência em desenvolvimento full stack. Especializado em React, Node.js e Python, sempre em busca de novos desafios e oportunidades de aprendizado.',
-    experience: [
-      {
-        id: 1,
-        title: 'Senior Full Stack Developer',
-        company: 'TechCorp Angola',
-        duration: '2022 - Presente',
-        description: 'Desenvolvimento de aplicações web modernas usando React, Node.js e PostgreSQL.'
-      },
-      {
-        id: 2,
-        title: 'Frontend Developer',
-        company: 'StartupLuanda',
-        duration: '2020 - 2022',
-        description: 'Criação de interfaces responsivas e experiências de usuário excepcionais.'
-      }
-    ],
-    education: [
-      {
-        id: 1,
-        degree: 'Bacharelado em Engenharia de Software',
-        institution: 'Universidade Agostinho Neto',
-        year: '2018 - 2022',
-        description: 'Foco em desenvolvimento de software, algoritmos e estruturas de dados.'
-      }
-    ],
-    skills: ['React', 'Node.js', 'Python', 'TypeScript', 'PostgreSQL', 'Docker', 'AWS', 'Git'],
-    contact: {
-      email: 'romeu.cajamba@email.com',
-      phone: '+244 999 999 999',
-      website: 'romeucajamba.dev'
-    }
-  });
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -208,7 +172,7 @@ export const Personal = () => {
         isOpen={isEditModalOpen}
         onClose={() => setIsEditModalOpen(false)}
         profileData={profileData}
-        onSave={(data) => setProfileData(data)} 
+        onSave={(data) => setProfileData(data)}
       />
     </div>
   );
