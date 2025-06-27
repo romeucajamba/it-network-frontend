@@ -36,6 +36,18 @@ export const RecoverPassword = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label className="block text-gray-700 text-sm font-medium mb-3">
+                    Insira senha antiga
+                  </label>
+                  <InputField
+                    icon={<Lock className="w-5 h-5" />}
+                    placeholder=""
+                    type="password"
+                    value={newPassword}
+                    onChange={setNewPassword}
+                  />
+                </div>
+                <div>
+                  <label className="block text-gray-700 text-sm font-medium mb-3">
                     Insira a nova senha
                   </label>
                   <InputField

@@ -42,6 +42,10 @@ export function ProfileHover() {
                             Sair da Conta
                         </Button>
                     </LogOutModal>
+                    <Link href="/change-passe" className="cursor-pointer">
+                        <Button>Mundar senha</Button>
+                    </Link>
+                    
                 </div>
             </HoverCardContent>
         </HoverCard>
