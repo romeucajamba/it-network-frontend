@@ -14,10 +14,9 @@ export const Personal = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header with navigation */}
-      <div className="bg-white border-b sticky top-0 z-10">
+      <div className="bg-white">
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <h1 className="text-2xl font-bold text-gray-900">DevConnect</h1>
             <Button 
               onClick={() => setIsEditModalOpen(true)}
               className="bg-blue-600 hover:bg-blue-700"

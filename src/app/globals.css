@@ -123,4 +123,12 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.backround-image{
+  background-image: url("../assets/coder.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

@@ -4,15 +4,28 @@ import React, { useState, useEffect } from 'react';
 //Componentes
 import Image from 'next/image';
 import { routes } from "@/lib/routes";
-import UserLogo from "@/assets/user.svg";
+import Logo from "@/assets/it-netwrk.svg"
 import Link from "next/link";
-import { LogOutModal } from "./logOut";
 import { Button } from './ui/button';
-import { LogOut } from "@/lib/icons";
+import { Input } from './ui/input';
+import { IoSearchOutline } from "@/lib/icons";
 import { NotificationsHover } from "./notificationHover";
+import { ProfileHover } from "./profileHover";
 
 export function Header ()  {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const handleSearch = () => {
+    const filters = {
+      
+    };
+    console.log(filters);
+  };
 
   // Fechar menu mobile quando clicar em um link
   const handleMobileMenuClick = () => {
@@ -36,24 +49,21 @@ export function Header ()  {
     <>
       <header 
         className={`
-          w-full flex items-center p-4 lg:p-6 bg-[#1B191F] w-full transition-all duration-300
+          flex items-center p-4 lg:p-6 bg-slate-800 w-full h-[5rem] transition-all duration-300
         `}
       >
         {/* Logo */}
         <div className="flex items-center z-50">
-          <div className="w-10 h-10 rounded-full overflow-hidden"> 
-            <Link href="/profile">
+          <div className="w-[4rem] h-[4rem] rounded-full overflow-hidden border border-white"> 
+            <Link href="/dashboard">
               <Image 
-              src={UserLogo} 
-              alt="User avatar" 
-              width={10}
-              height={10}
+              src={Logo} 
+              alt="logo" 
               className="w-full h-full object-cover"
                />
             </Link>
           </div>
         </div>
-
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex flex-1 justify-center max-w-2xl ml-2">
           <ul className="flex justify-center items-center space-x-8 text-white">
@@ -72,16 +82,29 @@ export function Header ()  {
               </li>
             ))}
           </ul>
-          <LogOutModal >
-            <Button className="size-8 md:size-10 lg:size-10 xl:size-10 2xl:size-10 bg-transparent hover:bg-transparent cursor-pointer text-white hover:text-white shadow-none">
-              <LogOut />
-            </Button>
-          </LogOutModal>
-
-          <NotificationsHover />
         </nav>
 
+        <form onSubmit={(e) => e.preventDefault()} className="flex items-center">
+          <div className="relative w-72">
+            <Input
+              name="search"
+              placeholder="Pesquisar..."
+              className="w-full h-11 pr-10 border border-white hover:border-gray-100 text-[#FFFFFF]"
+              value={searchTerm}
+              onChange={handleSearchChange}
+            />
+            <Button type="submit"  onClick={handleSearch} variant="default" className="absolute bg-transparent cursor-pointer right-2 top-1/2 -translate-y-1/2 p-0 h-6 w-6 text-[#717F96] hover:bg-transparent hover:text-white">
+              <IoSearchOutline className="w-4 h-4" />
+            </Button>
+          </div>
+      </form>
 
+        {/* Logo */}
+        <div className="flex items-center space-x-4 ml-10">
+            <ProfileHover/>
+          <NotificationsHover />
+        </div>
+        
         {/* Mobile Menu Button */}
         <div className='ml-auto'>
             <button

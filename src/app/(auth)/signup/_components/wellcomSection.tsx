@@ -1,17 +1,16 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-
-import { Users, Heart } from "lucide-react";
+import { Users, Heart } from "@/lib/icons";;
 
 export const WelcomeSection = () => {
   return (
-    <div className="lg:w-1/2 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 p-8 lg:p-12 flex flex-col justify-center text-white relative overflow-hidden">
+    <div className="lg:w-1/2 backround-image p-8 lg:p-12 flex flex-col justify-center text-white relative overflow-hidden">
       <div className="absolute inset-0 bg-black/10"></div>
       <div className="relative z-10">
         <div className="mb-8">
           <h1 className="text-3xl lg:text-4xl font-bold mb-6 leading-tight">
-            Bem-Vindo Meeting Technology
+            IT network
           </h1>
           
           <div className="mb-8">
