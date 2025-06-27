@@ -5,41 +5,9 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
+import { ProfileData, EditProfileModalProps} from "@/types/types"
 
-interface ProfileData {
-  name: string;
-  headline: string;
-  location: string;
-  connections: number; // ← adicionado aqui
-  about: string;
-  experience: Array<{
-    id: number;
-    title: string;
-    company: string;
-    duration: string;
-    description: string;
-  }>;
-  education: Array<{
-    id: number;
-    degree: string;
-    institution: string;
-    year: string;
-    description: string;
-  }>;
-  skills: string[];
-  contact: {
-    email: string;
-    phone: string;
-    website: string;
-  };
-}
 
-interface EditProfileModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  profileData: ProfileData;
-  onSave: (data: ProfileData) => void;
-}
 
 export const EditProfileModal = ({ isOpen, onClose, profileData, onSave }: EditProfileModalProps) => {
   const [formData, setFormData] = useState<ProfileData>(profileData);

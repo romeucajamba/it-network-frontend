@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { InputField } from "./InputField";
+import { InputField } from "@/components/inputField";
 import { User, Mail, Lock, Eye, EyeOff, Calendar, MapPin, Briefcase, Users } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
@@ -31,13 +31,6 @@ export const RegistrationForm = () => {
   return (
     <div className="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
       <div className="max-w-md mx-auto w-full">
-        <div className="text-center mb-8">
-          <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-2">
-            Preencha os campos
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full"></div>
-        </div>
-
         <form onSubmit={handleSubmit} className="space-y-6">
           <InputField
             icon={<User className="w-5 h-5" />}
@@ -164,7 +157,7 @@ export const RegistrationForm = () => {
 
           <Button
             type="submit"
-            className="w-full cursor-pointer h-14 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+            className="w-full h-[3rem] cursor-pointer bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold rounded-[8px] transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
           >
             Cadastrar-se
           </Button>
