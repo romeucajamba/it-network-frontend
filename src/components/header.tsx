@@ -54,12 +54,12 @@ export function Header ()  {
       >
         {/* Logo */}
         <div className="flex items-center z-50">
-          <div className="w-[4rem] h-[4rem] rounded-full overflow-hidden border border-white"> 
+          <div className="w-16 h-16 rounded-full overflow-hidden"> 
             <Link href="/dashboard">
               <Image 
               src={Logo} 
               alt="logo" 
-              className="w-full h-full object-cover"
+              className="w-14 h-14"
                />
             </Link>
           </div>
@@ -100,9 +100,16 @@ export function Header ()  {
       </form>
 
         {/* Logo */}
-        <div className="flex items-center space-x-4 ml-10">
-            <ProfileHover/>
-          <NotificationsHover />
+        <div className="flex items-center space-x-2 ml-auto h-20 w-48 justify-end">
+                <div className="static">
+                    <span
+                        className="absolute text-center ml-[20px] bg-red-600 text-[#ffffff] rounded-full w-3  text-[8px]"
+                    >
+                       { "+" }
+                    </span>
+                    <NotificationsHover />
+                </div>
+          <ProfileHover/>
         </div>
         
         {/* Mobile Menu Button */}

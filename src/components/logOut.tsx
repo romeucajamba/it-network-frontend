@@ -31,7 +31,7 @@ export function LogOutModal( {  children, }: LogOutProps ) {
       <DialogContent className="sm:max-w-[300px] flex flex-col items-center space-y-4 bg-[#1B191F] border-[#1B191F]">
         <DialogHeader className="flex items-center flex-col space-y-4 pt-4 mt-4">
           <DialogTitle className="text-lg text-center font-medium text-white">
-            Tem certeza que deseja  <br/>sair da sua conta?
+            Tem certeza que deseja  <br/>terminar sessão?
           </DialogTitle>
           <DialogDescription></DialogDescription>
         </DialogHeader>
