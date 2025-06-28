@@ -11,6 +11,7 @@ import { HiOutlineNewspaper } from "react-icons/hi";
 import { PiVideoLight } from "react-icons/pi";
 import { RiHomeLine } from "react-icons/ri";
 import { IoSearchOutline } from "react-icons/io5";
+import { TbLockPassword } from "react-icons/tb";
 export {
     Settings, 
     LuCalendarRange, 
@@ -31,5 +32,6 @@ export {
     HiOutlineNewspaper,
     PiVideoLight,
     RiHomeLine, 
-    IoSearchOutline
+    IoSearchOutline,
+    TbLockPassword
 }

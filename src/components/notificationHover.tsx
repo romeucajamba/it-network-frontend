@@ -16,8 +16,8 @@ export function NotificationsHover() {
     return (
         <HoverCard>
             <HoverCardTrigger className="cursor-pointer">
-                <Button className="size-10 md:size-10 cursor-pointer lg:size-10 xl:size-10 2xl:size-10 bg-transparent hover:bg-transparent text-white shadow-none">
-                    <GoBell />
+                <Button className="size-8  cursor-pointer bg-transparent hover:bg-transparent text-white shadow-none">
+                    <GoBell className="size-6"/>
                 </Button>
             </HoverCardTrigger>
             <HoverCardContent className="space-y-6 w-60 bg-slate-800">
