@@ -12,6 +12,7 @@ import { PiVideoLight } from "react-icons/pi";
 import { RiHomeLine } from "react-icons/ri";
 import { IoSearchOutline } from "react-icons/io5";
 import { TbLockPassword } from "react-icons/tb";
+import { PiRobotThin } from "react-icons/pi";
 export {
     Settings, 
     LuCalendarRange, 
@@ -33,5 +34,6 @@ export {
     PiVideoLight,
     RiHomeLine, 
     IoSearchOutline,
-    TbLockPassword
+    TbLockPassword,
+    PiRobotThin
 }

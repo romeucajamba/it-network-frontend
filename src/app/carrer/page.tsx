@@ -184,7 +184,7 @@ const Career = () => {
   return (
     <div className="min-h-screen bg-slate-900 text-white">
       {/* Header */}
-      <div className="bg-gradient-to-r from-purple-600 to-blue-600 p-8">
+      <div className="p-8">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between">
             <div>
@@ -196,12 +196,11 @@ const Career = () => {
             <Link href="/dashboard">
                <Button 
                 variant="outline" 
-                className="bg-white/10 border-white/20 hover:bg-white/20"
+                className="bg-white/10 border-white/20 hover:bg-white/20 cursor-pointer"
                 >
                  Voltar ao Dashboard
                 </Button>
             </Link>
-           
           </div>
         </div>
       </div>
@@ -210,23 +209,23 @@ const Career = () => {
       <div className="max-w-7xl mx-auto p-6">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="grid w-full grid-cols-5 bg-slate-800 mb-8">
-            <TabsTrigger value="professors" className="data-[state=active]:bg-purple-600">
+            <TabsTrigger value="professors" className="data-[state=active]:bg-white cursor-pointer data-[state=active]:text-black text-gray-100">
               <Users className="w-4 h-4 mr-2" />
               Professores
             </TabsTrigger>
-            <TabsTrigger value="platforms" className="data-[state=active]:bg-purple-600">
+            <TabsTrigger value="platforms" className="data-[state=active]:bg-white cursor-pointer data-[state=active]:text-black text-gray-100">
               <Globe className="w-4 h-4 mr-2" />
               Plataformas
             </TabsTrigger>
-            <TabsTrigger value="schools" className="data-[state=active]:bg-purple-600">
+            <TabsTrigger value="schools" className="data-[state=active]:bg-white cursor-pointer data-[state=active]:text-black text-gray-100">
               <GraduationCap className="w-4 h-4 mr-2" />
               Escolas
             </TabsTrigger>
-            <TabsTrigger value="books" className="data-[state=active]:bg-purple-600">
+            <TabsTrigger value="books" className="data-[state=active]:bg-white cursor-pointer data-[state=active]:text-black text-gray-100">
               <BookOpen className="w-4 h-4 mr-2" />
               Livros
             </TabsTrigger>
-            <TabsTrigger value="resources" className="data-[state=active]:bg-purple-600">
+            <TabsTrigger value="resources" className="data-[state=active]:bg-white cursor-pointer data-[state=active]:text-black text-gray-100">
               <Brain className="w-4 h-4 mr-2" />
               Recursos
             </TabsTrigger>
@@ -249,11 +248,11 @@ const Career = () => {
                         alt={professor.name}
                         className="w-20 h-20 rounded-full mb-4 group-hover:scale-105 transition-transform"
                       />
-                      <h3 className="text-lg font-semibold mb-2">{professor.name}</h3>
+                      <h3 className="text-lg font-semibold mb-2 text-white">{professor.name}</h3>
                       <p className="text-sm text-gray-400 mb-3">{professor.profession}</p>
                       <div className="flex items-center gap-2 mb-2">
                         <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                        <span className="text-sm">{professor.rating}</span>
+                        <span className="text-sm text-blue-600">{professor.rating}</span>
                       </div>
                       <p className="text-xs text-gray-500">{professor.students} estudantes</p>
                     </div>
@@ -280,10 +279,10 @@ const Career = () => {
                         className="w-12 h-12 rounded-lg"
                       />
                       <div>
-                        <CardTitle className="text-lg">{platform.name}</CardTitle>
+                        <CardTitle className="text-lg text-white">{platform.name}</CardTitle>
                         <div className="flex items-center gap-1">
                           <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                          <span className="text-sm text-gray-400">{platform.rating}</span>
+                          <span className="text-sm text-blue-600">{platform.rating}</span>
                         </div>
                       </div>
                     </div>
@@ -298,7 +297,7 @@ const Career = () => {
                       ))}
                     </div>
                     <Button 
-                      className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+                      className="w-full cursor-pointer bg-blue-600 hover:bg-blue-500"
                       onClick={() => window.open(platform.url, '_blank')}
                     >
                       Visitar Plataforma

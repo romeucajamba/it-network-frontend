@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react';
-import { Edit, MapPin, Briefcase, GraduationCap, Mail, Phone, Globe, Plus } from 'lucide-react';
+import { Edit, MapPin, Briefcase, GraduationCap, Mail, Phone, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -12,14 +12,14 @@ export const Personal = () => {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
       {/* Header with navigation */}
-      <div className="bg-white">
+      <div>
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <Button 
               onClick={() => setIsEditModalOpen(true)}
-              className="bg-blue-600 hover:bg-blue-700"
+              className="bg-blue-600 hover:bg-blue-700 cursor-pointer"
             >
               <Edit className="w-4 h-4 mr-2" />
               Editar Perfil
@@ -33,7 +33,7 @@ export const Personal = () => {
           
           {/* Left Column - Profile Card */}
           <div className="lg:col-span-1">
-            <Card className="mb-6">
+            <Card className="mb-6 bg-gray-100">
               <CardContent className="p-6 text-center">
                 <Avatar className="w-32 h-32 mx-auto mb-4">
                   <AvatarImage src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=128&h=128&fit=crop&crop=face" />
@@ -58,7 +58,7 @@ export const Personal = () => {
             </Card>
 
             {/* Contact Info */}
-            <Card>
+            <Card className='bg-gray-100'>
               <CardHeader>
                 <CardTitle className="text-lg">Informações de Contato</CardTitle>
               </CardHeader>
@@ -83,7 +83,7 @@ export const Personal = () => {
           <div className="lg:col-span-2 space-y-6">
             
             {/* About Section */}
-            <Card>
+            <Card className='bg-gray-100'>
               <CardHeader>
                 <CardTitle className="text-xl">Sobre</CardTitle>
               </CardHeader>
@@ -93,12 +93,9 @@ export const Personal = () => {
             </Card>
 
             {/* Experience Section */}
-            <Card>
+            <Card className='bg-gray-100'>
               <CardHeader className="flex flex-row items-center justify-between">
                 <CardTitle className="text-xl">Experiência</CardTitle>
-                <Button variant="ghost" size="sm">
-                  <Plus className="w-4 h-4" />
-                </Button>
               </CardHeader>
               <CardContent className="space-y-6">
                 {profileData.experience.map((exp) => (
@@ -118,12 +115,9 @@ export const Personal = () => {
             </Card>
 
             {/* Education Section */}
-            <Card>
+            <Card className='bg-gray-100'>
               <CardHeader className="flex flex-row items-center justify-between">
                 <CardTitle className="text-xl">Formação</CardTitle>
-                <Button variant="ghost" size="sm">
-                  <Plus className="w-4 h-4" />
-                </Button>
               </CardHeader>
               <CardContent className="space-y-6">
                 {profileData.education.map((edu) => (
@@ -143,12 +137,9 @@ export const Personal = () => {
             </Card>
 
             {/* Skills Section */}
-            <Card>
+            <Card className='bg-gray-100'>
               <CardHeader className="flex flex-row items-center justify-between">
                 <CardTitle className="text-xl">Competências</CardTitle>
-                <Button variant="ghost" size="sm">
-                  <Plus className="w-4 h-4" />
-                </Button>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">

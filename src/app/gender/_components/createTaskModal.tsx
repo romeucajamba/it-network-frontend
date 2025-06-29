@@ -255,7 +255,7 @@ export function CreateTaskModal ({
                   <Button
                     variant="outline"
                     className={cn(
-                      "w-full justify-start text-left font-normal bg-slate-700 border-slate-600 text-white",
+                      "w-full justify-start text-left font-normal bg-slate-700 border-slate-600 cursor-pointer text-white",
                       !formData.startDate && "text-muted-foreground"
                     )}
                   >
@@ -282,7 +282,7 @@ export function CreateTaskModal ({
                   <Button
                     variant="outline"
                     className={cn(
-                      "w-full justify-start text-left font-normal bg-slate-700 border-slate-600 text-white",
+                      "w-full justify-start text-left font-normal bg-slate-700 cursor-pointer border-slate-600 text-white",
                       !formData.endDate && "text-muted-foreground"
                     )}
                   >
@@ -358,6 +358,7 @@ export function CreateTaskModal ({
                       variant="ghost"
                       size="sm"
                       onClick={() => removeAttachment(attachment.id)}
+                      className='cursor-pointer'
                     >
                       <X className="w-4 h-4" />
                     </Button>
@@ -384,7 +385,7 @@ export function CreateTaskModal ({
                   onChange={(e) => setNewLink(prev => ({ ...prev, url: e.target.value }))}
                   className="bg-slate-700 border-slate-600 text-white"
                 />
-                <Button type="button" onClick={addLink} variant="outline">
+                <Button type="button" onClick={addLink} variant="outline" className='cursor-pointer'>
                   <Link2 className="w-4 h-4" />
                 </Button>
               </div>
@@ -406,6 +407,7 @@ export function CreateTaskModal ({
                         variant="ghost"
                         size="sm"
                         onClick={() => removeLink(link.id)}
+                        className='cursor-pointer'
                       >
                         <X className="w-4 h-4" />
                       </Button>
@@ -430,6 +432,7 @@ export function CreateTaskModal ({
                     title: 'GitHub',
                     url: 'https://github.com'
                   }])}
+                  className='cursor-pointer'
                 >
                   GitHub
                 </Button>
@@ -442,6 +445,7 @@ export function CreateTaskModal ({
                     title: 'Stack Overflow',
                     url: 'https://stackoverflow.com'
                   }])}
+                  className='cursor-pointer'
                 >
                   Stack Overflow
                 </Button>
@@ -454,6 +458,7 @@ export function CreateTaskModal ({
                     title: 'MDN Docs',
                     url: 'https://developer.mozilla.org'
                   }])}
+                  className='cursor-pointer'
                 >
                   MDN Docs
                 </Button>
@@ -466,6 +471,7 @@ export function CreateTaskModal ({
                     title: 'VS Code',
                     url: 'https://code.visualstudio.com'
                   }])}
+                  className='cursor-pointer'
                 >
                   VS Code
                 </Button>
@@ -475,10 +481,10 @@ export function CreateTaskModal ({
 
           {/* Botões */}
           <div className="flex justify-end space-x-2 pt-4">
-            <Button type="button" variant="outline" onClick={onClose}>
+            <Button type="button" variant="outline" onClick={onClose} className='cursor-pointer'>
               Cancelar
             </Button>
-            <Button type="submit" className="bg-blue-600 hover:bg-blue-700">
+            <Button type="submit" className="bg-blue-600 hover:bg-blue-700 cursor-pointer">
               {editTask ? 'Atualizar' : 'Criar'} Atividade
             </Button>
           </div>

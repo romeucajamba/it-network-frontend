@@ -16,7 +16,7 @@ export const MessageList: React.FC<MessageListProps> = ({ messages, onMediaClick
       case 'audio':
         return (
           <div className="bg-slate-600 rounded-lg p-3 flex items-center space-x-3 max-w-xs">
-            <Button size="icon" className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 w-8 h-8">
+            <Button size="icon" className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 w-8 h-8 cursor-pointer">
               <Play className="w-3 h-3" />
             </Button>
             <div className="flex-1">
@@ -72,7 +72,7 @@ export const MessageList: React.FC<MessageListProps> = ({ messages, onMediaClick
               <p className="text-white text-sm truncate">{message.fileName}</p>
               <p className="text-gray-400 text-xs">Documento</p>
             </div>
-            <Button size="icon" variant="ghost" className="text-gray-400 hover:text-white w-8 h-8">
+            <Button size="icon" variant="ghost" className="text-gray-400 cursor-pointer hover:text-white w-8 h-8">
               <Download className="w-4 h-4" />
             </Button>
           </div>

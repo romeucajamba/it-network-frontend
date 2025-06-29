@@ -55,7 +55,7 @@ export const ChatHeader: React.FC<ChatHeaderProps> = ({
             onClick={onVoiceCall}
             variant="ghost" 
             size="icon" 
-            className="text-gray-400 hover:text-white hover:bg-slate-700"
+            className="text-gray-400 cursor-pointer hover:text-white hover:bg-slate-700"
           >
             <Phone className="w-5 h-5" />
           </Button>
@@ -64,7 +64,7 @@ export const ChatHeader: React.FC<ChatHeaderProps> = ({
             onClick={onVideoCall}
             variant="ghost" 
             size="icon" 
-            className="text-gray-400 hover:text-white hover:bg-slate-700"
+            className="text-gray-400 cursor-pointer hover:text-white hover:bg-slate-700"
           >
             <Video className="w-5 h-5" />
           </Button>
@@ -72,7 +72,7 @@ export const ChatHeader: React.FC<ChatHeaderProps> = ({
           <Button 
             variant="ghost" 
             size="icon" 
-            className="text-gray-400 hover:text-white hover:bg-slate-700"
+            className="text-gray-400 cursor-pointer hover:text-white hover:bg-slate-700"
           >
             <MoreHorizontal className="w-5 h-5" />
           </Button>

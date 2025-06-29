@@ -24,11 +24,11 @@ export const ContactList: React.FC<ContactListProps> = ({
     <div className="w-80 bg-slate-800 border-r border-slate-700 flex flex-col">
       <div className="p-4 border-b border-slate-700">
         <div className="flex items-center justify-between mb-4">
-          <h1 className="text-xl font-bold text-white">DevChat</h1>
+          <h1 className="text-xl font-bold text-white">Mensagem</h1>
           <Button 
             onClick={onCreateGroup}
             size="icon" 
-            className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600"
+            className="bg-gradient-to-r cursor-pointer from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600"
           >
             <Plus className="w-4 h-4" />
           </Button>

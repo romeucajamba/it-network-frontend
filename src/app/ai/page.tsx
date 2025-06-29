@@ -48,7 +48,7 @@ export default function VirtualAssistant () {
   }, [messages]);
 
   return (
-    <div className="h-screen w-full bg-slate-800 border-l border-slate-700 flex flex-col">
+    <div className="h-screen w-full bg-slate-900 border-l border-slate-700 flex flex-col">
       {/* Header */}
       <div className="p-4 border-b border-slate-700">
         <div className="flex items-center space-x-3">

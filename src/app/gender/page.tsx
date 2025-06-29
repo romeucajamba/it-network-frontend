@@ -118,12 +118,12 @@ const Agenda = () => {
                 Calendário
               </CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className='cursor-pointer justify-center w-full ml-16'>
               <Calendar
                 mode="single"
                 selected={selectedDate}
                 onSelect={(date) => date && setSelectedDate(date)}
-                className="rounded-md border-slate-700"
+                className="rounded-md border-slate-100 cursor-pointer"
                 modifiers={{
                   hasTask: tasks.map(task => new Date(task.startDate))
                 }}
@@ -158,7 +158,7 @@ const Agenda = () => {
                   <div className="flex flex-wrap gap-2">
                     <Button
                       onClick={() => setIsCreateModalOpen(true)}
-                      className="bg-blue-600 hover:bg-blue-700"
+                      className="bg-blue-600 hover:bg-blue-700 cursor-pointer"
                     >
                       <Plus className="w-4 h-4 mr-2" />
                       Nova Atividade
@@ -170,7 +170,7 @@ const Agenda = () => {
               <CardContent>
                 <div className="flex flex-wrap gap-4 mb-4">
                   {/* Filtro por tipo */}
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 cursor-pointer">
                     <Button
                       variant={filterType === 'all' ? 'default' : 'outline'}
                       size="sm"
@@ -184,7 +184,7 @@ const Agenda = () => {
                         variant={filterType === type ? 'default' : 'outline'}
                         size="sm"
                         onClick={() => setFilterType(type)}
-                        className="flex items-center"
+                        className="flex items-center cursor-pointer"
                       >
                         <span className="mr-1">{getTypeIcon(type)}</span>
                         {type === 'meeting' && 'Reunião'}
@@ -205,6 +205,7 @@ const Agenda = () => {
                     variant={sortBy === 'date' ? 'default' : 'ghost'}
                     size="sm"
                     onClick={() => setSortBy('date')}
+                    className='cursor-pointer'
                   >
                     Data
                   </Button>
@@ -212,6 +213,7 @@ const Agenda = () => {
                     variant={sortBy === 'priority' ? 'default' : 'ghost'}
                     size="sm"
                     onClick={() => setSortBy('priority')}
+                    className='cursor-pointer'
                   >
                     Prioridade
                   </Button>
@@ -219,6 +221,7 @@ const Agenda = () => {
                     variant={sortBy === 'status' ? 'default' : 'ghost'}
                     size="sm"
                     onClick={() => setSortBy('status')}
+                    className='cursor-pointer'
                   >
                     Status
                   </Button>
@@ -247,9 +250,9 @@ const Agenda = () => {
                       </p>
                       <Button
                         onClick={() => setIsCreateModalOpen(true)}
-                        className="bg-blue-600 hover:bg-blue-700"
+                        className="bg-blue-600 hover:bg-blue-700 cursor-pointer"
                       >
-                        <Plus className="w-4 h-4 mr-2" />
+                        <Plus className="w-4 h-4 mr-2 cursor-pointer" />
                         Criar primeira atividade
                       </Button>
                     </div>

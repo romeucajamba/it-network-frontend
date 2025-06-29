@@ -99,12 +99,9 @@ export const EditProfileModal = ({ isOpen, onClose, profileData, onSave }: EditP
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+      <div className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-auto">
         <div className="sticky top-0 bg-white border-b p-6 flex items-center justify-between">
           <h2 className="text-2xl font-bold">Editar Perfil</h2>
-          <Button variant="ghost" size="sm" onClick={onClose}>
-            <X className="w-5 h-5" />
-          </Button>
         </div>
 
         <div className="p-6 space-y-8">
@@ -112,7 +109,7 @@ export const EditProfileModal = ({ isOpen, onClose, profileData, onSave }: EditP
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Informações Básicas</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
+              <div className='space-y-2'>
                 <Label htmlFor="name">Nome</Label>
                 <Input
                   id="name"
@@ -120,7 +117,7 @@ export const EditProfileModal = ({ isOpen, onClose, profileData, onSave }: EditP
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 />
               </div>
-              <div>
+              <div className='space-y-2'>
                 <Label htmlFor="location">Localização</Label>
                 <Input
                   id="location"
@@ -129,7 +126,7 @@ export const EditProfileModal = ({ isOpen, onClose, profileData, onSave }: EditP
                 />
               </div>
             </div>
-            <div>
+            <div className='space-y-2'>
               <Label htmlFor="headline">Título Profissional</Label>
               <Input
                 id="headline"
@@ -137,7 +134,7 @@ export const EditProfileModal = ({ isOpen, onClose, profileData, onSave }: EditP
                 onChange={(e) => setFormData({ ...formData, headline: e.target.value })}
               />
             </div>
-            <div>
+            <div className='space-y-2'>
               <Label htmlFor="about">Sobre</Label>
               <Textarea
                 id="about"
@@ -152,7 +149,7 @@ export const EditProfileModal = ({ isOpen, onClose, profileData, onSave }: EditP
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Contato</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div>
+              <div className='space-y-2'>
                 <Label htmlFor="email">Email</Label>
                 <Input
                   id="email"
@@ -164,7 +161,7 @@ export const EditProfileModal = ({ isOpen, onClose, profileData, onSave }: EditP
                   })}
                 />
               </div>
-              <div>
+              <div className='space-y-2'>
                 <Label htmlFor="phone">Telefone</Label>
                 <Input
                   id="phone"
@@ -175,7 +172,7 @@ export const EditProfileModal = ({ isOpen, onClose, profileData, onSave }: EditP
                   })}
                 />
               </div>
-              <div>
+              <div className='space-y-2'>
                 <Label htmlFor="website">Website</Label>
                 <Input
                   id="website"
@@ -193,7 +190,7 @@ export const EditProfileModal = ({ isOpen, onClose, profileData, onSave }: EditP
           <div className="space-y-4">
             <div className="flex items-center justify-between">
               <h3 className="text-lg font-semibold">Experiência</h3>
-              <Button onClick={addExperience} size="sm">
+              <Button onClick={addExperience} size="sm" className='cursor-pointer'>
                 <Plus className="w-4 h-4 mr-2" />
                 Adicionar
               </Button>
@@ -217,7 +214,7 @@ export const EditProfileModal = ({ isOpen, onClose, profileData, onSave }: EditP
                     variant="ghost"
                     size="sm"
                     onClick={() => removeExperience(exp.id)}
-                    className="ml-2"
+                    className="ml-2 cursor-pointer"
                   >
                     <Trash2 className="w-4 h-4" />
                   </Button>
@@ -240,7 +237,7 @@ export const EditProfileModal = ({ isOpen, onClose, profileData, onSave }: EditP
           <div className="space-y-4">
             <div className="flex items-center justify-between">
               <h3 className="text-lg font-semibold">Formação</h3>
-              <Button onClick={addEducation} size="sm">
+              <Button onClick={addEducation} size="sm" className='cursor-pointer'>
                 <Plus className="w-4 h-4 mr-2" />
                 Adicionar
               </Button>
@@ -264,7 +261,7 @@ export const EditProfileModal = ({ isOpen, onClose, profileData, onSave }: EditP
                     variant="ghost"
                     size="sm"
                     onClick={() => removeEducation(edu.id)}
-                    className="ml-2"
+                    className="ml-2 cursor-pointer"
                   >
                     <Trash2 className="w-4 h-4" />
                   </Button>
@@ -293,7 +290,7 @@ export const EditProfileModal = ({ isOpen, onClose, profileData, onSave }: EditP
                 onChange={(e) => setNewSkill(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && addSkill()}
               />
-              <Button onClick={addSkill}>Adicionar</Button>
+              <Button onClick={addSkill} className='cursor-pointer'>Adicionar</Button>
             </div>
             <div className="flex flex-wrap gap-2">
               {formData.skills.map((skill, index) => (
@@ -315,10 +312,10 @@ export const EditProfileModal = ({ isOpen, onClose, profileData, onSave }: EditP
         </div>
 
         <div className="sticky bottom-0 bg-white border-t p-6 flex justify-end gap-4">
-          <Button variant="outline" onClick={onClose}>
+          <Button variant="outline" onClick={onClose} className='cursor-pointer hover:bg-red-500 hover:text-white'>
             Cancelar
           </Button>
-          <Button onClick={handleSave} className="bg-blue-600 hover:bg-blue-700">
+          <Button onClick={handleSave} className="bg-blue-600 hover:bg-blue-700 cursor-pointer">
             Salvar Alterações
           </Button>
         </div>

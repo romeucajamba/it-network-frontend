@@ -155,12 +155,12 @@ export function TaskCard ({ task, onUpdate, onDelete }: TaskCardProps) {
                 variant="ghost"
                 size="sm"
                 onClick={toggleStatus}
-                className="p-0 h-auto"
+                className="p-0 h-auto cursor-pointer"
               >
                 {task.status === 'completed' ? (
                   <CheckCircle2 className="w-5 h-5 text-green-500" />
                 ) : (
-                  <Circle className="w-5 h-5 text-gray-400" />
+                  <Circle className="w-5 h-5 text-gray-100" />
                 )}
               </Button>
               
@@ -230,7 +230,7 @@ export function TaskCard ({ task, onUpdate, onDelete }: TaskCardProps) {
                 variant="ghost"
                 size="sm"
                 onClick={() => setNotificationsEnabled(!notificationsEnabled)}
-                className="p-2"
+                className="p-2 cursor-pointer hover:bg-transparent"
               >
                 {notificationsEnabled ? (
                   <Bell className="w-4 h-4 text-blue-500" />
@@ -241,8 +241,8 @@ export function TaskCard ({ task, onUpdate, onDelete }: TaskCardProps) {
               
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" size="sm" className="p-2">
-                    <MoreHorizontal className="w-4 h-4" />
+                  <Button variant="ghost" size="sm" className="p-2 hover:bg-transparent cursor-pointer">
+                    <MoreHorizontal className="w-4 h-4 cursor-pointer text-gray-100" />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="bg-slate-700 border-slate-600" align="end">

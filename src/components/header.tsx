@@ -11,22 +11,21 @@ import { Input } from './ui/input';
 import { IoSearchOutline } from "@/lib/icons";
 import { NotificationsHover } from "./notificationHover";
 import { ProfileHover } from "./profileHover";
+import { useRouter } from 'next/navigation'; // App Router correto
 
 export function Header ()  {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const route = useRouter();
 
-  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(event.target.value);
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value);
   };
 
-  const handleSearch = () => {
-    const filters = {
-      
-    };
-    console.log(filters);
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    route.push(`/search?q=${encodeURIComponent(searchTerm)}`);
   };
-
   // Fechar menu mobile quando clicar em um link
   const handleMobileMenuClick = () => {
     setIsMobileMenuOpen(false);
@@ -84,7 +83,7 @@ export function Header ()  {
           </ul>
         </nav>
 
-        <form onSubmit={(e) => e.preventDefault()} className="flex items-center">
+        <form onSubmit={handleSearch} className="flex items-center">
           <div className="relative w-72">
             <Input
               name="search"
@@ -101,14 +100,14 @@ export function Header ()  {
 
         {/* Logo */}
         <div className="flex items-center space-x-2 ml-auto h-20 w-48 justify-end">
-                <div className="static">
-                    <span
-                        className="absolute text-center ml-[20px] bg-red-600 text-[#ffffff] rounded-full w-3  text-[8px]"
-                    >
-                       { "+" }
-                    </span>
-                    <NotificationsHover />
-                </div>
+            <div className="static">
+              <span
+                className="absolute text-center ml-[20px] bg-red-600 text-[#ffffff] rounded-full w-3  text-[8px]"
+              >
+                { "+" }
+              </span>
+              <NotificationsHover />
+            </div>    
           <ProfileHover/>
         </div>
         

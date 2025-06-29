@@ -7,11 +7,10 @@ export default function RootLayout({
 }>) {
   return (
     <>
-        <Header/>
+      <Header/>
       <main className={`bg-[#001329] w-screen`}>      
         {children}
-      </main>
-        
+      </main> 
     </>
   );
 }

@@ -132,7 +132,7 @@ export default function ReelsSection () {
             <Button
               size="icon"
               variant="ghost"
-              className={`w-12 h-12 rounded-full cursor-pointer bg-white/10 hover:bg-white/20 ${
+              className={`w-12 h-12 rounded-full cursor-pointer bg-white/10 hover:bg-white/20 hover:text-red-500 ${
                 reelsData[currentReel].isLiked ? 'text-red-400' : 'text-white'
               }`}
             >

@@ -58,7 +58,7 @@ export const MessageInput: React.FC<MessageInputProps> = ({
             onClick={() => setShowAttachMenu(!showAttachMenu)}
             variant="ghost"
             size="icon"
-            className="text-gray-400 hover:text-white"
+            className="text-gray-400 cursor-pointer hover:text-white"
           >
             <Paperclip className="w-5 h-5" />
           </Button>
@@ -102,7 +102,7 @@ export const MessageInput: React.FC<MessageInputProps> = ({
           <Button
             variant="ghost"
             size="icon"
-            className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white w-8 h-8"
+            className="absolute cursor-pointer right-2 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white w-8 h-8"
           >
             <Smile className="w-4 h-4" />
           </Button>
@@ -111,7 +111,7 @@ export const MessageInput: React.FC<MessageInputProps> = ({
         {message.trim() ? (
           <Button
             onClick={handleSend}
-            className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600"
+            className="bg-gradient-to-r cursor-pointer from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600"
           >
             <Send className="w-4 h-4" />
           </Button>
@@ -121,7 +121,7 @@ export const MessageInput: React.FC<MessageInputProps> = ({
             className={`${
               isRecording 
                 ? 'bg-red-500 hover:bg-red-600' 
-                : 'bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600'
+                : 'bg-gradient-to-r cursor-pointer from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600'
             }`}
           >
             {isRecording ? <MicOff className="w-4 h-4" /> : <Mic className="w-4 h-4" />}

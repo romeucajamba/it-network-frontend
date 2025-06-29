@@ -1,3 +1,4 @@
+"use client"
 //Componentes
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { Button } from "@/components/ui/button";
@@ -11,13 +12,13 @@ export function ProfileHover() {
     return (
         <HoverCard>
             <HoverCardTrigger className="cursor-pointer">
-                <div className="w-14 h-14 rounded-full overflow-hidden"> 
+                <div className="w-12 h-12 rounded-full overflow-hidden"> 
                     <Image 
                     src={UserLogo} 
                     alt="User avatar" 
                     width={10}
                     height={10}
-                    className="w-14 h-14 object-cover"
+                    className="w-12 h-12 object-cover"
                     />
                 </div>
             </HoverCardTrigger>
@@ -25,12 +26,12 @@ export function ProfileHover() {
                 {/* Opções de perfil e logout */}
                 <div className="border-t pt-4 space-y-4">
                     <Link href="/profile" className="flex items-center gap-2 text-[#474747] hover:text-[#009DFF]">
-                        <div className="w-24 h-24 rounded-full overflow-hidden"> 
+                        <div className="w-10 h-10 rounded-full overflow-hidden"> 
                             <Image 
                             src={UserLogo} 
                             alt="User avatar" 
-                            width={15}
-                            height={15}
+                            width={10}
+                            height={10}
                             className="w-full h-full object-cover"
                             />
                         </div>

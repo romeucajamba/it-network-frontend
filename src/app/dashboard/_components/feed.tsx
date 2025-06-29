@@ -5,6 +5,9 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import Link from "next/link";
+import User from "@/assets/user.svg";
+import Image from "next/image";
 
 const posts = [
   {
@@ -41,11 +44,22 @@ export const Feed = () => {
           {/* Create Post */}
           <div className="bg-slate-800 rounded-xl p-6 border border-slate-700">
             <div className="flex items-start space-x-3">
-              <Avatar className="w-10 h-10">
-                <AvatarFallback className="bg-gradient-to-r from-purple-500 to-pink-500 text-white">
-                  U
-                </AvatarFallback>
-              </Avatar>
+              <Link href="/profile">
+                <Avatar className="w-10 h-10">
+                  <AvatarFallback className="bg-gradient-to-r from-purple-500 to-pink-500 text-white">
+                    <div className="w-10 h-10 rounded-full overflow-hidden"> 
+                    <Image 
+                    src={User} 
+                    alt="User avatar" 
+                    width={10}
+                    height={10}
+                    className="w-10 h-10 object-cover"
+                    />
+                </div>
+                 </AvatarFallback>
+                </Avatar>
+              </Link>
+              
               <div className="flex-1">
                 <Textarea
                   placeholder="What's happening?"
@@ -56,15 +70,15 @@ export const Feed = () => {
                 />
                 <div className="flex items-center justify-between mt-4">
                   <div className="flex items-center space-x-2">
-                    <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white">
+                    <Button variant="ghost" size="sm" className="text-gray-400 cursor-pointer hover:bg-transparent hover:text-white">
                       <Paperclip className="w-4 h-4" />
                     </Button>
-                    <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white">
+                    <Button variant="ghost" size="sm" className="text-gray-400 cursor-pointer hover:bg-transparent hover:text-white">
                       <Smile className="w-4 h-4" />
                     </Button>
                   </div>
                   <Button 
-                    className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700"
+                    className="bg-gradient-to-r cursor-pointer from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700"
                     disabled={!newPost.trim()}
                   >
                     <Send className="w-4 h-4 mr-2" />
@@ -91,7 +105,7 @@ export const Feed = () => {
                     <p className="text-sm text-gray-400">{post.time}</p>
                   </div>
                 </div>
-                <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white">
+                <Button variant="ghost" size="icon" className="text-gray-400 cursor-pinter hover:text-white">
                   <MoreHorizontal className="w-4 h-4" />
                 </Button>
               </div>
@@ -100,10 +114,10 @@ export const Feed = () => {
 
               {post.hasAudio && (
                 <div className="bg-slate-700 rounded-lg p-4 mb-4 flex items-center space-x-3">
-                  <Button size="icon" className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700">
+                  <Button size="icon" className="bg-gradient-to-r cursor-pinter from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700">
                     <div className="w-0 h-0 border-l-[6px] border-l-white border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent ml-1"></div>
                   </Button>
-                  <div className="flex-1 h-8 bg-slate-600 rounded-full relative overflow-hidden">
+                  <div className="flex-1 h-8 bg-slate-600 cursor-pinter rounded-full relative overflow-hidden">
                     <div className="absolute inset-0 flex items-center justify-center space-x-1">
                       {Array.from({ length: 40 }).map((_, i) => (
                         <div
@@ -123,16 +137,16 @@ export const Feed = () => {
                 <Button 
                   variant="ghost" 
                   size="sm" 
-                  className={`hover:text-red-400 ${post.isLiked ? 'text-red-400' : ''}`}
+                  className={`hover:text-red-400 cursor-pinter ${post.isLiked ? 'text-red-400' : ''}`}
                 >
                   <Heart className={`w-4 h-4 mr-2 ${post.isLiked ? 'fill-current' : ''}`} />
                   {post.likes}
                 </Button>
-                <Button variant="ghost" size="sm" className="hover:text-blue-400">
+                <Button variant="ghost" size="sm" className="hover:text-blue-400 cursor-pinter">
                   <MessageCircle className="w-4 h-4 mr-2" />
                   {post.comments}
                 </Button>
-                <Button variant="ghost" size="sm" className="hover:text-green-400">
+                <Button variant="ghost" size="sm" className="hover:text-green-400 cursor-pinter">
                   <Share className="w-4 h-4 mr-2" />
                   Share
                 </Button>
